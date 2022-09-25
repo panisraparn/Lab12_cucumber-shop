@@ -21,9 +21,13 @@ public class Product {
     public double getPrice() {
         return price;
     }
+
+    //use
     public int getStock() {
         return stock;
     }
+
+
     public void setName(String name) {
         this.name = name;
     }

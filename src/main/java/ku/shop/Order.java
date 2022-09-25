@@ -1,5 +1,6 @@
 package ku.shop;
 
+import java.security.PublicKey;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,14 +10,19 @@ public class Order {
     private LocalDateTime date;
 
     public Order() {
-        this.items = new ArrayList<>();
+        this.items = new ArrayList<>(); //list ของ
         this.date = LocalDateTime.now();
     }
 
-    public void addItem(Product prod, int quantity) {
+    //เวลา add item ที่ order stock ของสินค้านั้นจะลดลง
+    public void addItem(Product prod, int quantity ) {
         items.add(new OrderItem(prod, quantity));
         prod.cutStock(quantity);
+
+//        int stock = 0;
+//        stock = prod.getStock();
     }
+
 
     public double getTotal() {
         double total = 0;
@@ -24,4 +30,7 @@ public class Order {
             total += item.getSubtotal();
         return total;
     }
+
+
+
 }

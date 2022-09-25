@@ -11,6 +11,7 @@ public class ProductCatalog {
         products = new HashMap<>();
     }
 
+    //ใส่ product ใน catalog product
     public void addProduct(String name, double price, int stock) {
         products.put(name, new Product(name, price, stock));
     }
@@ -18,4 +19,7 @@ public class ProductCatalog {
     public Product getProduct(String name) {
         return products.get(name);
     }
+
+
+
 }
